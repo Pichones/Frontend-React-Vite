@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
 import 'react-pro-sidebar/dist/css/styles.css'
+import { Link } from 'react-router-dom'
 import { Box, IconButton, Typography } from '@mui/material'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import AnalyticsOutlinedIcon from '@mui/icons-material/AnalyticsOutlined'
@@ -13,7 +14,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   return (
     <MenuItem active={selected === title} onClick={() => setSelected(title)} icon={icon}>
       <Typography color='#315e82'>{title}</Typography>
-      {/* <Link to={to} /> */}
+      <Link to={to} />
     </MenuItem>
   )
 }
@@ -66,26 +67,26 @@ const Sidebar = () => {
             <Box paddingLeft={isCollapsed ? undefined : '10%'}>
               <Typography variant='h7' color='#a3a3a3' sx={{ m: '15px 0 5px 20px' }}>Menu</Typography>
               <Item title='Home' to='/' icon={<HomeOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-              <Item title='Profile' to='/' icon={<PersonOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Profile' to='/profile' icon={<PersonOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
               <SubMenu title='Datasets'>
-                <Item color='#315e82' title='Dataset 1' to='/' icon={<DatasetOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-                <Item title='Dataset 2' to='/' icon={<DatasetOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+                <Item title='Dataset 1' to='/dataset-1' icon={<DatasetOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+                <Item title='Dataset 2' to='/dataset-2' icon={<DatasetOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
               </SubMenu>
-              <Item title='About' to='/' icon={<InfoOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='About' to='/about' icon={<InfoOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
             </Box>
             <Box paddingLeft={isCollapsed ? undefined : '10%'}>
               <Typography variant='h7' color='#a3a3a3' sx={{ m: '15px 0 5px 20px' }}>Annotations</Typography>
-              <Item title='Category' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-              <Item title='Area' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-              <Item title='Position' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-              <Item title='Occupancy' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-              <Item title='Measure' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Category' to='/category' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Area' to='/area' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Position' to='/position' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Occupancy' to='/occupancy' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Measure' to='/measure' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
               <Typography variant='h7' color='#a3a3a3' sx={{ m: '15px 0 5px 20px' }}>Images</Typography>
-              <Item title='Brightness' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-              <Item title='Hue' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-              <Item title='Saturation' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-              <Item title='Noise' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
-              <Item title='Blur' to='/' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Brightness' to='/brightness' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Hue' to='/hue' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Saturation' to='/saturation' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Noise' to='/noise' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
+              <Item title='Blur' to='/blur' icon={<AnalyticsOutlinedIcon sx={{ color: '#315e82' }} />} selected={selected} setSelected={setSelected} />
             </Box>
           </Menu>
         </ProSidebar>
